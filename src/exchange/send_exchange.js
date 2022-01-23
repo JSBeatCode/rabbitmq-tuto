@@ -15,7 +15,7 @@ amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.clouda
         channel.assertExchange(exchange, 'fanout', {
             durable: false
         });
-        // exchange에 넣을 경우 sendToQueue 대신 publish
+        // exchange에 넣을 경우 publish
         // 가운데의 '' 은 routing key
         channel.publish(exchange, '', Buffer.from(msg));
         console.log(" [x] Sent %s", msg);
