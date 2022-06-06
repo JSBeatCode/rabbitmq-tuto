@@ -1,6 +1,7 @@
 var amqp = require('amqplib/callback_api');
 
-amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.cloudamqp.com/atyftcdh', function(error0, connection) {
+// amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.cloudamqp.com/atyftcdh', 
+amqp.connect('amqp://localhost:5672', function(error0, connection) {
     if (error0) {
         throw error0;
     }
@@ -9,8 +10,8 @@ amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.clouda
             throw error1;
         }
         var exchange = 'topic_logs';
-        var args = ['info','error','warning']
-        // var args = process.argv.slice(2);
+        // var args = ['info','error','warning']
+        var args = process.argv.slice(2);
         // <speed>.<colour>.<species>
         var key = (args.length > 0) ? args[0] : 'anonymous.info';
         var msg = args.slice(1).join(' ') || 'Hello World!';

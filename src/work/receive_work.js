@@ -1,6 +1,7 @@
 var amqp = require('amqplib/callback_api');
 
-amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.cloudamqp.com/atyftcdh', function(error, connection) {
+// amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.cloudamqp.com/atyftcdh', 
+amqp.connect('amqp://localhost:5672', function(error, connection) {
     connection.createChannel(function(error, channel) {
         var queue = 'task_queue';
 

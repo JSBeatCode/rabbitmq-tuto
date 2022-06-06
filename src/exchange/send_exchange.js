@@ -1,6 +1,7 @@
 var amqp = require('amqplib/callback_api');
 
-amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.cloudamqp.com/atyftcdh', function(error0, connection) {
+// amqp.connect('amqps://atyftcdh:nOhw26J5K87e9zbcgwFeF2rObEQU8IPn@dingo.rmq.cloudamqp.com/atyftcdh', 
+amqp.connect('amqp://localhost:5672', function(error0, connection) {
     if (error0) {
         throw error0;
     }
